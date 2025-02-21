@@ -1,0 +1,21 @@
+
+public class Exe04 {
+	public static void main(String[] args) {
+		int[] vetor = { 3, -1, 7, 0, -9, -2, 4, -5 }; // Exemplo de vetor
+		int tamanho = vetor.length;
+
+		System.out.println("O total de elementos negativos no vetor é: " + contarNegativos(vetor, tamanho));
+	}
+
+	public static int contarNegativos(int[] vetor, int tamanho) {
+		// Condição de parada: Se o tamanho do vetor for 0 retorna 0 
+		if (tamanho == 0) {
+			return 0;
+		}
+		// Verifica se o último elemento do vetor é negativo e soma 1 se for chamando a
+		// função para o resto do vetor
+		int conta = (vetor[tamanho - 1] < 0) ? 1 : 0;
+		return conta + contarNegativos(vetor, tamanho - 1);
+	}
+
+}
