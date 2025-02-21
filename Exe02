@@ -1,0 +1,27 @@
+public class Exe02 {
+	// Função recursiva para encontrar o menor valor no vetor
+	public static int menorValor(int[] vetor, int tamanho, int menor) {
+		// Condição de parada: Se o tamanho do vetor for 0 retorna o menor valor
+
+		if (tamanho == 0) {
+			return menor;
+		}
+		// Atualiza o menor valo se o element atual for menor que o menor encontrado
+		
+		if (vetor[tamanho - 1] < menor) {
+			menor = vetor[tamanho - 1];
+		}
+		// Relação de chamada dos passos: Chama a função novamente reduzindo o tamanho
+		// do vetor
+		return menorValor(vetor, tamanho - 1, menor);
+	}
+
+	public static void main(String[] args) {
+		int[] vetor = { 13, 41, 9, 1, 4, 0, -1 }; // Exemplo de vetor
+		int tamanho = vetor.length;
+		int menor = vetor[tamanho - 1]; // Começa com o último elemento do vetor
+
+		System.out.println("O menor valor no vetor é: " + menorValor(vetor, tamanho, menor));
+	}
+
+}
