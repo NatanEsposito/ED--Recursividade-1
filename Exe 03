@@ -1,0 +1,22 @@
+
+public class Exe03 {
+	public static void main(String[] args) {
+		int numero = 5; // Número de exemplo
+		if (numero > 12) {
+			System.out.println("Número muito alto! Escolha um número até 12 para evitar estouro.");
+		} else {
+			System.out.println("Fatorial de " + numero + " é: " + fatorial(numero));
+		}
+	}
+	// Função recursiva para calcular o fatorial de um número
+	public static int fatorial(int n) {
+		// Condição de parada: Se n for 0 ou 1 retorna 1 
+		if (n == 0 || n == 1) {
+			return 1;
+		}
+		// Relação de chamada dos passos: O fatorial de n é n * fatorial(n - 1)
+		return n * fatorial(n - 1);
+	}
+
+
+}
