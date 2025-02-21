@@ -1,0 +1,21 @@
+
+public class Exe06 {
+
+	public static int somar(int a, int b) {
+		// Condição de parada Quano b == 0 o resultado é o valor a
+		if (b == 0) {
+			return a;
+		}
+
+		// Subtrai 1 de b e chama recursivamente somar com a e (b-1), equivalente a
+		// somar 1 a a
+		return somar(a + 1, b - 1); // Aqui estamos "somando 1" ao valor de a a cada chamada recursiva
+	}
+
+	public static void main(String[] args) {
+		int a = 7; // Primeiro número
+		int b = 5; // Segundo número
+		int resultado = somar(a, b);
+		System.out.printf("Resultado da soma de %d e %d é: %d%n", a, b, resultado);
+	}
+}
