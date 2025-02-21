@@ -1,0 +1,19 @@
+
+public class Exe01 {
+public static void main(String[]args) {
+	int n = 7;
+	System.out.println("a somatoria eh: "+ somatorio(n));
+}
+
+public static int somatorio(int n) {
+	if(n<0) {
+		return 0;
+		
+	}
+	if (n==0) {
+		return 0;
+	} else {
+		return n + somatorio (n-1);
+	}
+}
+}
